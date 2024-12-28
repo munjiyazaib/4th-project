@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: #FF6600;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            width: 80%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .faq-section h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .faq-section p {
+
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+ 
+        .faq-item p {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .faq-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .faq-column {
+            width: 50%;
+        }
+
+        .faq-item {
+            display: flex;
+            justify-content: space-between;
+            /* Text and symbol aligned */
+            align-items: center;
+            /* Vertical alignment */
+            border-bottom: 1px solid #FF6600;
+            padding: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            color: #FF6600;
+        }
+
+        .symbol {
+            font-size: 20px;
+            /* Adjust size of the symbol */
+            color: #FF6600;
+            transition: transform 0.3s ease;
+            /* Optional: symbol hover effect */
+        }
+
+        .faq-item:hover .symbol {
+            transform: rotate(180deg);
+            /* Rotate symbol on hover (optional) */
+        }
+    </style>
+
+
+    <div class="faq-section">
+        <h1>FAQs</h1>
+        <p>Your most asked questions, answered here.</p>
+        <div class="faq-container">
+            <div class="faq-column">
+                <div class="faq-item">
+                    <p>Health Benefits</p>
+                    <span class="symbol">⌄</span>
+                </div>
+                <div class="faq-item">
+                    <p>What is your interview process?</p>
+                    <span class="symbol">⌄</span>
+                </div>
+                <div class="faq-item">
+                    <p>Retirement Programs</p>
+                    <span class="symbol">⌄</span>
+                </div>
+                <div class="faq-item">
+                    <p>How often should I apply?</p>
+                    <span class="symbol">⌄</span>
+                </div>
+            </div>
+            <div class="faq-column">
+                <div class="faq-item">
+                    <p>Can I submit an idea?</p>
+                    <span class="symbol">⌄</span>
+                </div>
+                <div class="faq-item">
+                    <p>Can I mail in/drop off my portfolio, reel, or resume?</p>
+                    <span class="symbol">⌄</span>
+                </div>
+                <div class="faq-item">
+                    <p>Can I apply for multiple roles?</p>
+                    <span class="symbol">⌄</span>
+                </div>
+                <div class="faq-item">
+                    <p>Work Permit Requirements</p>
+                    <span class="symbol">⌄</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </body>
+
+</html>

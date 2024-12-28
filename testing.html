@@ -1,0 +1,443 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Circle Menu with Logo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        .header {
+            display: flex;
+
+            align-items: center;
+            padding: 3px 20px;
+            /* background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         */
+        }
+
+        .logo img {
+            height: 40px;
+            /* Adjust logo size */
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .toggle-menu {
+            display: none;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            /* Adds space between circles */
+            align-items: center;
+        }
+
+        .hamburger span {
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            /* Makes circles */
+            transition: 0.3s;
+        }
+
+        .menu {
+            position: absolute;
+            top: 50px;
+            /* Adjusts menu position below hamburger */
+            left: 15%;
+            /* Centers menu */
+            transform: translateX(-50%);
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            width: 150px;
+            /* Adjust width as needed */
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .menu ul li {
+            margin: 10px 0;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .toggle-menu:checked~.menu {
+            display: block;
+        }
+        video{
+            width: 100%;
+            object-fit: cover;
+        }
+        /* Section Styling */
+.fade-in-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff7a2d; /* Orange Color */
+  text-align: center;
+  position: relative;
+}
+
+.content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-in-out;
+}
+
+/* Fade In Effect (on Scroll) */
+.fade-in-section:target .content,
+.fade-in-section:focus-within .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+/* Social Icons */
+.social-icons a img {
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="menu-container">
+            <div class="header">
+                <input type="checkbox" id="toggle-menu" class="toggle-menu">
+                <label for="toggle-menu" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="logo">
+                    <img src="image/disneylogo3 (1).svg" alt="Logo" />
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+        <div class="hero" id>
+            <video src="image/video-1.mp4" controls autoplay muted></video>
+        </div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disney Animation Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Section Container -->
+  <section class="fade-in-section">
+    <div class="content">
+      <h1>Two Vibrant Locations, <br> One Collaborative Studio</h1>
+      <p>
+        Join Walt Disney Animation Studios through opportunities in Burbank and Vancouver! Follow Disney Animation Careers to stay connected on the latest open positions, upcoming events, career tips, and more.
+      </p>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+</body>
+
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure HTML & CSS Slider (No Inputs)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+     
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      /* max-width: 600px; */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+      height:90vh;
+    }
+
+    /* Set initial state */
+    .slider .slides {
+      transform: translateX(0);
+    }
+
+    /* Navigate based on :target */
+    #slide2:target ~ .slides {
+      transform: translateX(-100%);
+    }
+
+    #slide3:target ~ .slides {
+      transform: translateX(-200%);
+    }
+
+    #slide4:target ~ .slides {
+      transform: translateX(-300%);
+    }
+
+    /* Navigation dots */
+    .navigation {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .navigation a {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: block;
+    }
+
+    #slide1:target ~ .navigation a:nth-child(1),
+    #slide2:target ~ .navigation a:nth-child(2),
+    #slide3:target ~ .navigation a:nth-child(3),
+    #slide4:target ~ .navigation a:nth-child(4) {
+      background-color: #333;
+    }
+    @media (max-width: 768px) {
+      .slide img {
+        height: 70vh; /* Reduce height for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide img {
+        height: 60vh; /* Further reduce height for very small screens */
+      }
+
+      .navigation a {
+        width: 10px;
+        height: 10px; /* Smaller dots for small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+     Anchors for navigatio
+    <div id="slide1"></div>
+    <div id="slide2"></div>
+    <div id="slide3"></div>
+    <div id="slide4"></div>
+
+    Slide container -->
+    <!-- <div class="slides">
+        <div class="slide"><img src="image/bg-ariel_sketches_2.webp" alt="Slide 1"></div>
+        <div class="slide"><img src="image/bg-24-iwaju.webp" alt="Slide 2"></div>
+        <div class="slide"><img src="image/bg-OnceUponAStudio.webp"alt="Slide 3"></div>
+        <div class="slide"><img src="image/bg-wish.webp" alt="Slide 4"></div>
+      </div>
+
+     Navigation dots 
+    <div class="navigation">
+      <a href="#slide1"></a>
+      <a href="#slide2"></a>
+      <a href="#slide3"></a>
+      <a href="#slide4"></a>
+    </div>
+  </div>
+</body>
+</html> --> 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+<style>
+  /* Scroll container setup */
+  .scroll-container {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+  }
+
+  .dummy-section {
+      height: 100vh;
+      background-color: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  /* Fade-in section default */
+  .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+      scroll-snap-align: start;
+  }
+
+  /* When section is "active" */
+  .scroll-container:has(.fade-in-section:target) .fade-in-section {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .container2 {
+      position: relative;
+      background-color: #f3783b;
+  }
+
+  .content-ariel-img {
+      object-fit: cover;
+      width: 100%;
+      height: 550px;
+      opacity: 0.2;
+  }
+
+  .content-info-ariel {
+      bottom: 0%;
+      position: absolute;
+      top: 30%;
+      left: 0;
+      left: 45px;
+      gap: 21px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .content-info-ariel h1 {
+      font-size: 35px;
+  }
+
+  .content-info-ariel p {
+      line-height: 1.3em;
+      font-size: 16px;
+  }
+</style>
+</head>
+<body>
+  
+
+<div class="scroll-container">
+  <!-- Section before -->
+  <section class="dummy-section">Scroll down to reveal...</section>
+
+  <!-- Section with fade-in effect -->
+  <section class="fade-in-section">
+      <div class="container2">
+          <div class="content-ariel">
+              <img class="content-ariel-img" src="image/kakamora-bg.webp" alt="">
+              <div class="content-info-ariel">
+                  <h1>Two Vibrant Locations,<br>One Collaborative Studio</h1>
+                  <p>Join Walt Disney Animation Studios through opportunities in Burbank and Vancouver! Follow Disney
+                      Animation Careers to stay connected on the latest open positions, upcoming events, career tips,
+                      and more.
+                  </p>
+                  <div class="n-i-img">
+                      <img src="image/facebook-icon.svg" alt="">
+                      <img src="image/instagram-icon.svg" alt="">
+                      <img src="image/linkedin-icon.svg" alt="">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Section after -->
+  <section class="dummy-section">More content below...</section>
+</div>
+
+</body>
+</html>
+

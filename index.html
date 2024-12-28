@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+          * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    
+
+
+
+/* container of grid 3 image */
+    .content img {object-fit: cover;
+        width: 100%;
+        height: 400px;
+    }
+
+    video {
+        object-fit: cover;
+        height: 99%;
+        width: 100%;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* .content-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    display: flex;
+    padding: 0  30px;
+    align-items: center;
+} */
+    .content-info {
+        position: absolute;
+        /* left: 0; */
+        /* right: 0; */
+        top: 40%;
+        display: flex;
+        padding: 0 30px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+
+    .content-info h1 {
+        font-size: 30px;
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+
+    .content-info p {
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+
+    .overlay {
+        position: relative;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #008cbaf2;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .content:hover .overlay {
+        height: 100%;
+    }
+
+
+
+    .overlay1 {
+        position: relative;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #dd543be8;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .content:hover .overlay1 {
+        height: 100%;
+    }
+
+    .overlay2 {
+        position: relative;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #855db3;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .content:hover .overlay2 {
+        height: 100%;
+    }
+
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 35%;
+        left: 40%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        /* text-align: center; */
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+    .text h1,h6,p{color: black;}
+        /* .container {
+            position: relative;
+            width: 50%;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        } */
+
+        /* .image-h-img-1{
+    background-image: url(image/H-img-1.webp);
+    display: block;
+  width: 100%;
+  height: auto;
+} */
+
+
+        /* .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #008CBA;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+            height: 100%;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        } */
+
+        /* arieal-bg-work */
+        .bg-image-1 {
+            background-image: url(image/bg-ariel_sketches_2.webp);
+            height: 600px;
+            opacity: 0.2;
+            /* transform: translate(0px,0px); */
+        }
+
+        .ariel-content {
+            width: 50%;
+            padding: 13% 10px;
+        }
+
+        .ariel-content h1 {
+            color: black !important;
+        }
+
+        .ariel-content p {
+            color: black !important;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="content">
+                <img  src="image/H-img-1.webp" alt="">
+                <div class="content-info">
+                    <h1>Be Part of</h1>
+                    <h1>our Story</h1>
+                    <p>CAREERS</p>
+                </div>
+                <div class="overlay">
+                    <div class="text">
+                        <h1>Be Part of</h1>
+                        <h1>our Story</h1>
+                        <h6>CAREERS</h6>
+                        <p>Each individual at our Studio contributes to the creation of our films. Be a part of our rich
+                            legacy of storytelling.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <video autoplay muted loop>
+                    <source src="/image/video-cind.mp4">
+                </video>
+                <div class="content-info">
+                    <h1>Creating</h1>
+                    <h1>Unforgettable Films </h1>
+                    <p>WHAT WE DO</p>
+                </div>
+                <div class="overlay1">
+                    <div class="text">
+                        <h1>Creating</h1>
+                        <h1>Unforgettable Films </h1>
+                        <h6>WHAT WE DO</h6>
+                        <p>Our films combine masterful artistry and storytelling with groundbreaking technology.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content">
+                <!-- <div class="overlay1">
+                    <div class="text">Hello World</div>
+                </div> -->
+                <img src="image/H-img-3.webp" alt="">
+                <div class="content-info">
+                    <h1>Accelerating</h1>
+                    <h1>Creativity</h1>
+                    <p>TECHNOLOGY</p>
+                </div>
+                <div class="overlay2">
+                    <div class="text">
+                        <h1>Accelerating</h1>
+                        <h1>Creativity</h1>
+                        <h6>TECHNOLOGY</h6>
+                        <p>Our technologists and artists work together to advance the art and science of animation and
+                            shape the future of animated storytelling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="container">
+        <h1>hijhihij</h1>
+      <div class="overlay">
+        <div class="text">Hello World</div>
+      </div>
+    </div>
+    <div class="container">
+        <h1>hijhihij</h1>
+      <div class="overlay">
+        <div class="text">Hello World</div>
+      </div>
+    </div>
+    <div class="container">
+        <h1>hijhihij</h1>
+      <div class="overlay">
+        <div class="text">Hello World</div>
+      </div>
+    </div> -->
+    <div class="bg-image-1">
+        <div class="ariel-content">
+            <h1>Combining masterful artistry and storytelling with groundbreaking technology</h1>
+            <p>Walt Disney Animation Studios is a filmmaker-driven animation studio responsible for creating some of the
+                most beloved films ever made. Located in Burbank and Vancouver, Disney Animation continues to build on
+                its rich legacy of innovation and creativity, from the first fully-animated feature film– 1937's Snow
+                White and the Seven Dwarfs– to 2024's Moana 2.</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect with Background Color</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Basic layout and centering */
+        body {
+            font-family: Arial, sans-serif;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            background-color: transparent;
+            /* Initial background */
+            transition: background-color 0.3s ease;
+            /* Smooth background transition */
+        }
+
+        /* Image styles */
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* transition: transform 0.3s ease; */
+        }
+
+        /* Initial state of content */
+         .content {
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.3s ease; */
+
+
+            position: absolute;
+        /* left: 0; */
+        /* right: 0; */
+        top: 60%;
+        display: flex;
+        padding: 0 30px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+
+        }
+        .content h1 {
+        font-size: 30px;
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+    .content p {
+        font-size: 16px;
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+
+        /* Second content that will show on hover */
+         .hover-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Hover effect: Hide initial content, show the hover content, and change background */
+        .image-container:hover .content {
+            opacity: 0;
+        }
+
+        .image-container:hover .hover-content {
+            opacity: 1;
+        }
+
+        /* Change background color on hover */
+        .image-container:hover {
+            background-color: gray;
+                /* Add a dark semi-transparent background */
+       
+            }
+       
+    
+
+        /* Zoom effect on image */
+        .image-container:hover img {
+            /* transform: scale(1.1); */
+            /* Zoom in the image */
+          
+          
+            background-color: #673AB7;
+            padding: 100%;
+            height: 100%;
+            width: 100%;
+           
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="image-container">
+            <img src="image/hd-img1.webp" alt="Image">
+            <div class="content">
+                <h1>Accelerating</h1>
+                <h1>Creativity</h1>
+                <p>TECHNOLOGY</p>
+            </div>
+            <div class="hover-content">
+                <h1>Accelerating</h1>
+                        <h1>Creativity</h1>
+                        <h6>TECHNOLOGY</h6>
+                        <p>Our technologists and artists work together to advance the art and science of animation and
+                            shape the future of animated storytelling.</p>
+                  
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="image/hd-img1.webp" alt="Image">
+            <div class="content" >
+                <h1>Accelerating</h1>
+                <h1>Creativity</h1>
+                <p>TECHNOLOGY</p>
+            </div>
+            <div class="hover-content">
+                <h1>Creativity</h1>
+                <h6>TECHNOLOGY</h6>
+                <p>Our technologists and artists work together to advance the art and science of animation and
+                    shape the future of animated storytelling.</p>
+          
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="image/hd-img1.webp" alt="Image">
+            <div class="content">
+                <h1>Accelerating</h1>
+                <h1>Creativity</h1>
+                <p>TECHNOLOGY</p>
+            </div>
+            <div class="hover-content">
+                <h1>Creativity</h1>
+                <h6>TECHNOLOGY</h6>
+                <p>Our technologists and artists work together to advance the art and science of animation and
+                    shape the future of animated storytelling.</p>
+          
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

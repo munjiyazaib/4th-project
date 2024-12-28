@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Slider</title>
+    <style>
+        /* General slider styles */
+        .slider {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            transition: 0.6s ease all;
+        }
+
+        /* Slide style */
+        .slide {
+            width: 100%;
+            flex: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Navigation dots */
+        .manual-nav {
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .manual-btn {
+            border: 2px solid #fff;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .manual-btn:hover {
+            background-color: #fff;
+        }
+
+        /* Navigation arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            font-size: 24px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+        /* Radio button styles */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Automatic slide navigation */
+        #radio1:checked~.slides {
+            transform: translateX(0%);
+        }
+
+        #radio2:checked~.slides {
+            transform: translateX(-100%);
+        }
+
+        #radio3:checked~.slides {
+            transform: translateX(-200%);
+        }
+
+        #radio4:checked~.slides {
+            transform: translateX(-300%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <div class="slide first">
+                <img src="image/bg-24-iwaju.webp" alt="Slide 1">
+            </div>
+            <!-- Slide 2 -->
+            <input type="radio" name="radio-btn" id="radio2">
+            <div class="slide">
+                <img src="image/bg-ariel_sketches_2.webp" alt="Slide 2">
+            </div>
+            <!-- Slide 3 -->
+            <input type="radio" name="radio-btn" id="radio3">
+            <div class="slide">
+                <img src="image/bg-Moana2_Crew.webp" alt="Slide 3">
+            </div>
+            <!-- Slide 4 -->
+            <input type="radio" name="radio-btn" id="radio4">
+            <div class="slide">
+                <img src="image/bg-wish.webp" alt="Slide 4">
+            </div>
+
+            <!-- Navigation manual -->
+            <div class="manual-nav">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+
+            <!-- Left and right arrows -->
+            <button class="arrow left">&#10094;</button>
+            <button class="arrow right">&#10095;</button>
+        </div>
+    </div>
+</body>
+
+</html>

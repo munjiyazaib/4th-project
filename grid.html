@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* body{
+        font-family: "brandon-grotesque", sans-serif;
+    } */
+h1,h2,h3,h4,h5,h6{
+    font-family: "rockwell", serif;
+}
+p,li{
+  
+    font-family: "brandon-grotesque", sans-serif
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Header */
+        .header {
+            display: flex;
+            /* justify-content: space-between; */
+            gap: 1%;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        /* Hamburger Button */
+        .menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            background-color: orangered;
+            padding: 1%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 7px;
+            width: 30%;
+            background: white;
+            border-radius: 50px;
+        }
+
+       
+
+        /* Fullscreen Menu Overlay */
+        .menu-overlay {
+            padding: 66px 0px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 34%;
+            height: 100%;
+            background: #272727;
+            /* display: grid;
+            grid-template-rows: auto 1fr auto; */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 5;
+        }
+
+        .menu-toggle:checked~.menu-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Menu Links */
+        .menu-overlay ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .menu-overlay ul li {
+            font-size: 24px;
+        }
+
+        .menu-overlay ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu-overlay ul li a:hover {
+            color: #ff6f61;
+        }
+
+        /* Footer Icons */
+        /* .footer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ff6f61;
+        } */
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .close-btn:hover {
+            color: #ff6f61;
+        }
+
+        .n-h1,
+        .n-h2,
+        .n-h3,
+        .n-h4 {
+            margin: 0;
+            width: 100%;
+            height: 10%;
+        }
+
+        .n-h1:hover {
+            color: black;
+            background-color: #F3783B;
+            font-family: "rockwell", serif;
+        }
+
+        .n-h2:hover {
+
+            background-color: #dd543b;
+        }
+
+        .n-h3:hover {
+
+            background-color: #65B2E8;
+        }
+
+        .n-h4:hover {
+
+            background-color: #855db3;
+            color: black;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+
+        .n-i-img img {
+            background: #343434;
+            height: 34px;
+            border-radius: 59px;
+        }
+
+        .n-i-img img:hover {
+            background-color: #f3783b;
+        }
+
+        .n-i-img {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .n-p {
+            color: white;
+            font-size: 20px;
+        }
+    .home-page-bg-img {
+    height: 613px;
+    width: 100%;
+}
+
+
+/* slider up the four image */
+
+.slider {
+      position: relative;
+      width: 100%;
+      /* max-width: 600px; */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+      height:90vh;
+    }
+
+    /* Set initial state */
+    .slider .slides {
+      transform: translateX(0);
+    }
+
+    /* Navigate based on :target */
+    #slide2:target ~ .slides {
+      transform: translateX(-100%);
+    }
+
+    #slide3:target ~ .slides {
+      transform: translateX(-200%);
+    }
+
+    #slide4:target ~ .slides {
+      transform: translateX(-300%);
+    }
+
+    /* Navigation dots */
+    .navigation {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .navigation a {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: block;
+    }
+
+    #slide1:target ~ .navigation a:nth-child(1),
+    #slide2:target ~ .navigation a:nth-child(2),
+    #slide3:target ~ .navigation a:nth-child(3),
+    #slide4:target ~ .navigation a:nth-child(4) {
+      background-color: #333;
+    }
+    @media (max-width: 768px) {
+      .slide img {
+        height: 70vh; /* Reduce height for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide img {
+        height: 60vh; /* Further reduce height for very small screens */
+      }
+
+      .navigation a {
+        width: 10px;
+        height: 10px; /* Smaller dots for small screens */
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* container of grid 3 image */
+    .content img {
+        object-fit: cover;
+        width: 100%;
+        height: 400px;
+    }
+
+    .content video {
+        object-fit: cover;
+        height: 99%;
+        width: 100%;
+    }
+
+    video {
+        /* object-fit: cover; */
+        height: 99%;
+        width: 100%;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* .content-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    display: flex;
+    padding: 0  30px;
+    align-items: center;
+} */
+    .content-info {
+        position: absolute;
+        /* left: 0; */
+        /* right: 0; */
+        top: 40%;
+        display: flex;
+        padding: 0 30px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+
+    .content-info h1 {
+        font-size: 30px;
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+
+    .content-info p {
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+
+    .hover {
+        position: relative;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #008cbaf2;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .content:hover .hover {
+        height: 100%;
+    }
+
+
+
+    .hover1 {
+        position: relative;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #dd543be8;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .content:hover .hover1 {
+        height: 100%;
+    }
+
+    .hover2 {
+        position: relative;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #855db3;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .content:hover .hover2 {
+        height: 100%;
+    }
+
+    .hover6 {
+        position: relative;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #a5b939e3;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .content:hover .hover6 {
+        height: 100%;
+    }
+
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 35%;
+        left: 40%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        /* text-align: center; */
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .text h1,
+    h6,
+    p {
+        font-size: 14px;
+        color: black;
+    }
+.content-info:hover{
+    display: none !important;
+}
+    /* container og ariel */
+    .container2 {
+        position: relative;
+    }
+
+    .content-ariel img {
+        object-fit: cover;
+        width: 100%;
+        height: 550px;
+        opacity: 0.2;
+    }
+
+    .content-info-ariel {
+        bottom: 0%;
+        position: absolute;
+        top: 30%;
+        left: 0;
+        left: 45px;
+        gap: 21px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-info-ariel h1 {
+        font-size: 35px;
+    }
+
+    .content-info-ariel p {
+        line-height: 1.3em;
+        font-size: 16px;
+    }
+
+    /* .content-down-info{
+    position: absolute;
+    bottom: 0;
+    left: 1.2rem;
+    transform: translateY(0%);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    mix-blend-mode: hard-light;
+    padding-right: 1.2rem;} */
+
+    .container4 {
+        position: relative;
+    }
+
+    .container4 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .content-down-info {
+        bottom: 13%;
+        position: absolute;
+        /* left: 0; */
+        /* right: 0; */
+        /* top: 68%; */
+        display: flex;
+        padding: 0 30px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .content-down-info h1 {
+        font-size: 30px;
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+
+    .content-down-info p {
+        padding: 2px;
+        color: white;
+        background-color: #000000c7;
+    }
+
+    /* footer */
+    .footer1 img {
+        /* margin: 15px 42px; */
+        height: 60px;
+    }
+
+    .footer-container {
+        display: flex;
+        gap: 11%;
+        margin: 6%;
+    }
+
+    div ul {
+        display: flex;
+        gap: 2%;
+        white-space:nowrap;
+    }
+
+    .footer-container2 {
+        display: flex;
+        margin: 10px 20px;
+        gap: 9px;
+    }
+
+    li {
+        font-size: 13px;
+    }
+
+    .i-img img {
+        background: grey;
+        height: 34px;
+        border-radius: 59px;
+    }
+
+    .i-img img:hover {
+        background-color: #f3783b;
+    }
+
+    .i-img {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+
+.i-img p {
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.fc2-d2{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<body>
+    
+
+
+
+    <header class="header">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="logo">
+            <img src="image/disneylogo3 (1).svg" alt="Logo">
+        </div>
+    </header>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <div class="menu-overlay">
+        <!-- <a href="#" class="close-btn">&times;</a> -->
+        <!-- <ul>
+            <li><a href="#">Home</a></li><hr>
+            <li><a href="#">Careers</a></li><hr>
+            <li><a href="#">What We Do</a></li><hr>
+            <li><a href="#">Life at Disney</a></li><hr>
+        </ul> -->
+        <h1 class="n-h1"><a href="home">Home</a></h1>
+        <h1 class="n-h2"><a href="home">Home</a></h1>
+        <h1 class="n-h3"><a href="home">Home</a></h1>
+        <h1 class="n-h4"><a href="home">Home</a></h1>
+        <p class="n-p">DISNEY ANIMATION</p>
+        <div class="n-i-img">
+
+            <img src="image/facebook-icon.svg" alt="">
+            <img src="image/twitter-icon.svg" alt="">
+            <img src="image/youtube-icon.svg" alt="">
+            <img src="image/instagram-icon.svg" alt="">
+            <img src="image/tiktok-icon.svg" alt="">
+        </div>
+        <p class="n-p">DISNEY ANIMATION CAREERS</p>
+        <div class="n-i-img">
+
+            <img src="image/facebook-icon.svg" alt="">
+            <img src="image/instagram-icon.svg" alt="">
+            <img src="image/linkedin-icon.svg" alt="">
+        </div>
+    </div>
+    <!-- <div class="background-mona-img">
+        <img  class="home-page-bg-img"
+        src="image/m.webp" alt="">
+    </div> -->
+    
+
+    <!-- <div class="hero" id>
+        <video src="image/video-1.mp4" controls autoplay muted></video>
+    </div> -->
+
+
+    <!-- <div class="slider">
+        <!-- Radio inputs for navigation  
+       <input type="radio" name="slider" id="slide1" checked>
+       <input type="radio" name="slider" id="slide2">
+       <input type="radio" name="slider" id="slide3">
+       <input type="radio" name="slider" id="slide4"> 
+    -->
+       <!-- Slide container -->
+       <!-- <div class="slides">
+         <div class="slide"><img src="image/bg-ariel_sketches_2.webp" alt="Slide 1"></div>
+         <div class="slide"><img src="image/bg-24-iwaju.webp" alt="Slide 2"></div>
+         <div class="slide"><img src="image/bg-OnceUponAStudio.webp"alt="Slide 3"></div>
+         <div class="slide"><img src="image/bg-wish.webp" alt="Slide 4"></div>
+       </div>
+    -->
+       <!-- Navigation dots -->
+       <!-- <div class="navigation">
+         <label for="slide1"></label>
+         <label for="slide2"></label>
+         <label for="slide3"></label>
+         <label for="slide4"></label>
+       </div>
+     </div> -->
+     <div class="slider">
+        <!-- Anchors for navigation -->
+        <div id="slide1"></div>
+        <div id="slide2"></div>
+        <div id="slide3"></div>
+        <div id="slide4"></div>
+    
+        <!-- Slide container -->
+        <div class="slides">
+            <div class="slide"><img src="image/bg-ariel_sketches_2.webp" alt="Slide 1"></div>
+            <div class="slide"><img src="image/bg-24-iwaju.webp" alt="Slide 2"></div>
+            <div class="slide"><img src="image/bg-OnceUponAStudio.webp"alt="Slide 3"></div>
+            <div class="slide"><img src="image/bg-wish.webp" alt="Slide 4"></div>
+          </div>
+    
+        <!-- Navigation dots -->
+        <div class="navigation">
+          <a href="#slide1"></a>
+          <a href="#slide2"></a>
+          <a href="#slide3"></a>
+          <a href="#slide4"></a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section>
+        <div class="container">
+            <div class="content">
+
+                <img src="image/H-img-1.webp" alt="">
+                <div class="content-info">
+                    <h1>Be Part of</h1>
+                    <h1>our Story</h1>
+                    <p>CAREERS</p>
+                </div>
+                <div class="hover">
+                    <div class="text">            
+                            <h1>Be Part of</h1>
+                            <h1>our Story</h1>
+                            <h6>CAREERS</h6>
+                            <p>Each individual at our Studio contributes to the creation of our films. Be a part of our
+                                rich </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <video autoplay muted loop>
+                    <source src="/image/video-cind.mp4">
+                </video>
+                <div class="content-info">
+                    <h1>Creating</h1>
+                    <h1>Unforgettable Films </h1>
+                    <p>WHAT WE DO</p>
+                </div>
+                <div class="hover1">
+                    <div class="text">
+                        <h1>Creating</h1>
+                        <h1>Unforgettable Films </h1>
+                        <h6>WHAT WE DO</h6>
+                        <p>Our films combine masterful artistry and storytelling with groundbreaking technology.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content">
+                <!-- <div class="overlay1">
+                    <div class="text">Hello World</div>
+                </div> -->
+                <img src="image/H-img-3.webp" alt="">
+                <div class="content-info">
+                    <h1>Accelerating</h1>
+                    <h1>Creativity</h1>
+                    <p>TECHNOLOGY</p>
+                </div>
+                <div class="hover2">
+                    <div class="text">
+                        <h1>Accelerating</h1>
+                        <h1>Creativity</h1>
+                        <h6>TECHNOLOGY</h6>
+                        <p>Our technologists and artists work together to advance the art and science of animation and
+                            shape the future of animated storytelling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container2">
+            <div class="content-ariel">
+                <img src="image/bg-ariel_sketches_2.webp" alt="">
+                <div class="content-info-ariel">
+                    <h1>Combining masterful artistry and storytelling with groundbreaking technology</h1>
+                    <p>Walt Disney Animation Studios is a filmmaker-driven animation studio responsible for creating
+                        some of the
+                        most beloved films ever made. Located in Burbank and Vancouver, Disney Animation continues to
+                        build on
+                        its rich legacy of innovation and creativity, from the first fully-animated feature film– 1937's
+                        Snow
+                        White and the Seven Dwarfs– to 2024's Moana 2.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section>
+    <video  autoplay muted loop>
+      
+         <source src="https://www.youtube.com/embed/hDZ7y8RP5HE?autoplay=0&controls=0&disablekb=1&playsinline=1&cc_load_policy=0&cc_lang_pref=auto&widget_referrer=https%3A%2F%2Fdisneyanimation.com%2F&rel=0&showinfo=0&iv_load_policy=3&modestbranding=1&customControls=true&noCookie=false&enablejsapi=1&origin=https%3A%2F%2Fdisneyanimation.com&widgetid=1">
+    </video>
+</section> -->
+
+    <div class="hero" id>
+        <video src="image/video-1.mp4" controls autoplay muted></video>
+    </div>
+
+
+    <section>
+        <div class="container4">
+            <div class="content">
+                <img src="image/hd-img1.webp" alt="">
+                <div class="content-down-info">
+                    <h1>Be Part of</h1>
+                    <h1>our Story</h1>
+                    <p>CAREERS</p>
+                </div>
+                <div class="hover">
+                    <div class="text">
+                        <h1>Be Part of</h1>
+                        <h1>our Story</h1>
+                        <h6>CAREERS</h6>
+                        <p>Each individual at our Studio contributes to the creation of our films. Be a part of our rich
+                            legacy of storytelling.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <img src="image/hd-img2.webp" alt="">
+                <!-- <video autoplay muted loop>
+                    <source src="/image/video-cind.mp4">
+                </video> -->
+                <div class="content-down-info">
+                    <h1>Creating</h1>
+                    <h1>Unforgettable Films </h1>
+                    <p>WHAT WE DO</p>
+                </div>
+                <div class="hover1">
+                    <div class="text">
+                        <h1>100 years of</h1>
+                        <h1>Storytelling </h1>
+                        <h6>WHAT WE DO</h6>
+                        <p>Our films combine masterful artistry and storytelling with groundbreaking technology.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content">
+                <!-- <div class="overlay1">
+                    <div class="text">Hello World</div>
+                </div> -->
+                <img src="image/hd-img3.webp" alt="">
+                <div class="content-down-info">
+                    <h1>Growing</h1>
+                    <h1>New Talent </h1>
+                    <p>INTERNS & APPRENTICES</p>
+                </div>
+                <div class="hover6">
+                    <div class="text">
+                        <h1>Growing</h1>
+                        <h1>New Talent </h1>
+                        <h6>INTERNS & APPRENTICES</h6>
+                        <p>Our technologists and artists work together to advance the art and science of animation and
+                            shape the future of animated storytelling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer1">
+                <img src="image/footer-logo.svg" alt="">
+            </div>
+
+            <div class="i-img">
+                <p>DISNEY ANIMATION</p>
+                <img src="image/facebook-icon.svg" alt="">
+                <img src="image/twitter-icon.svg" alt="">
+                <img src="image/youtube-icon.svg" alt="">
+                <img src="image/instagram-icon.svg" alt="">
+                <img src="image/tiktok-icon.svg" alt="">
+            </div>
+            <!-- <div class="i-img">
+                <ul type="none" >
+                    <li>
+                        <p>DISNEY ANIMATION</p>
+                    </li>
+                    <li> <img src="image/facebook-icon.svg" alt=""></li>
+                    <li> <img src="image/twitter-icon.svg" alt=""></li>
+                    <li> <img src="image/youtube-icon.svg" alt=""></li>
+                    <li> <img src="image/instagram-icon.svg" alt=""></li>
+                    <li> <img src="image/tiktok-icon.svg" alt=""></li>
+                </ul>
+            </div> -->
+
+            <div class="i-img">
+                <p>DISNEY ANIMATION CAREERS</p>
+                <img src="image/facebook-icon.svg" alt="">
+                <img src="image/instagram-icon.svg" alt="">
+                <img src="image/linkedin-icon.svg" alt="">
+            </div>
+            <!-- <div>
+             <p>DISNEY ANIMATION</p> 
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+          <img src="image/youtube-icon.svg" alt="">
+            </div> -->
+        </div>
+        <div class="footer-container2">
+            <div>
+                <p>© 2024 Disney Enterprises, Inc. All Rights Reserved.</p>
+            </div>
+            <div class="fc2-d2">
+                <h6>Part of
+                    The Walt Disney Company</h6>
+                <ul type="none">
+                    <li>Disney.com </li>
+                    <li> terms of use </li>
+                    <li>Privacy Policy</li>
+                    <li> Your US State Privacy Rights</li>
+                    <li>Children's Online Privacy Policy</li>
+                    <li>Do Not Sell or Share My Personal Information</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

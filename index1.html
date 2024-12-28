@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disney Animation Slider</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+    }
+
+    /* Slider container */
+    .slider {
+      width: 100%;
+      height: 80vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Image container (to hold all images) */
+    .slider .slides {
+      display: flex;
+      transition: transform 10s ease-in-out;
+    }
+
+    /* Each image */
+    .slider .slides img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    /* Add more images and make them scroll automatically */
+    @keyframes slideAnimation {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(-200%);
+      }
+
+      75% {
+        transform: translateX(-300%);
+      }
+
+      100% {
+        transform: translateX(-400%);
+      }
+    }
+
+    /* Applying the animation to the slide container */
+    .slider .slides {
+      animation: slideAnimation 15s infinite;
+    }
+
+   section{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows:100px 100px ;
+   }
+  </style>
+</head>
+
+<body>
+
+  <!-- Slider Section -->
+  <div class="slider">
+    <div class="slides">
+      <img src="image/bg-24-iwaju.webp" alt="Image 1">
+      <img src="image/bg-ariel_sketches_2.webp" alt="">
+      <img src="image/bg-Moana2_Crew.webp" alt="Image 3">
+      <img src="image/bg-OnceUponAStudio.webp" alt="Image 4">
+      <img src="image/bg-wish.webp" alt="Image 5">
+    </div>
+  </div>
+<section><div>1</div><div>3</div>
+<div>2</div>
+</section>
+
+</body>
+
+</html>
