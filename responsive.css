@@ -46,6 +46,11 @@
     .grp-div p {
         font-size: 9px !important;
     }
+    .hamburger {
+        gap: 8px !important;
+        width: 33px !important;
+        height: 45px !important;
+    }
 }
 
 @media screen and (min-width:771px) and (max-width:1131px) {
@@ -387,6 +392,11 @@
 
 
 @media screen and (min-width:421px) and (max-width:620px) {
+    .hamburger {
+        gap: 8px !important;
+        width: 33px !important;
+        height: 45px !important;
+    }
     .group {
         padding: 10%;
         display: grid;
