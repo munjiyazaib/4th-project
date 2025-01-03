@@ -166,17 +166,20 @@
     .orange,
     .green,
     .purple,
-    .blue,.yellow {
+    .blue,
+    .yellow {
         display: none !important;
     }
+
     h1 a {
         font-size: 22px !important;
     }
-   
+
     .n-p {
-       
+
         font-size: 16px !important;
     }
+
     .carrrer-content {
         top: 10%;
         font-size: 32px !important;
@@ -187,11 +190,13 @@
     .group {
         grid-template-columns: auto auto auto !important;
     }
+
     .n-p {
         line-height: 2rem;
         color: white;
         font-size: 16px !important;
     }
+
     h1 a {
         font-size: 24px !important;
     }
@@ -230,8 +235,8 @@
         font-size: 15px !important;
         line-height: 1.3rem !important;
     }
-    .content 
-    .initial-1,
+
+    .content .initial-1,
     .initial-2 {
         left: 42% !important;
     }
@@ -340,21 +345,31 @@
         flex-direction: column;
         gap: 0px !important;
     }
+
     .grp h1 {
         font-size: 33px !important;
     }
+
     .menu-overlay {
-        
-        width: 71% !important;}
-        .n-h1, .n-h2, .n-h3, .n-h4 {
-        
-            height: 76px !important;
-        }
-        video, .hero {
-            object-fit: cover;
-            height: 390px;
-            width: 100%;
-        }
+
+        width: 71% !important;
+    }
+
+    .n-h1,
+    .n-h2,
+    .n-h3,
+    .n-h4 {
+
+        height: 76px !important;
+    }
+
+    video,
+    .hero {
+        object-fit: cover;
+        height: 390px;
+        width: 100%;
+    }
+
     .bg-grey-content p {
         font-size: 15px !important;
     }
@@ -364,7 +379,7 @@
         flex-direction: column;
 
     }
-   
+
 }
 
 
@@ -546,15 +561,23 @@
     .initial-2 h1 {
         font-size: 18px !important;
     }
+
     .menu-overlay {
         width: 100% !important;
     }
+
     .initial p,
     .initial-1 p,
     .initial-2 p {
 
 
         background: rgb(0 0 0 / 0%) !important;
+    }
+
+    .hamburger {
+        gap: 8px !important;
+        width: 33px !important;
+        height: 45px !important;
     }
 
     .bg-grey-content h1 {
@@ -600,15 +623,24 @@
     p.initial-p {
         width: 100%;
     }
-    .n-i-img {
-        flex-wrap: wrap;}
-        .carrrer-content {
-            font-size: 26px !important;
-           
-            top: 19% !important;}
-            .carrrer-content {
-                font-size: 30px !important;
-               
-                top: 24% !important;}
-}
 
+    .n-i-img {
+        flex-wrap: wrap;
+    }
+
+    .carrrer-content {
+        font-size: 26px !important;
+        top: 19% !important;
+    }
+    .carrrer-content {
+        font-size: 22px !important;
+        top: 24% !important;
+    }
+    .n-h1, .n-h2, .n-h3, .n-h4 {
+        height: 60px !important;
+    }
+
+    .btn-blk button {
+        font-size: 10px;
+    }
+}

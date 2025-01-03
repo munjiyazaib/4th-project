@@ -571,6 +571,53 @@
             gap: 22px;
             /* Hidden by default */
         }
+        .content .overlay-4 {
+            position: absolute;
+            bottom: -100%;
+            /* Start off-screen at the bottom */
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #a1b533;
+            /* Semi-transparent overlay */
+            color: white;
+            /* display: grid;
+            place-items: center;  */
+            text-align: center;
+            transition: bottom 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            padding: 33px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 22px;
+            /* Hidden by default */
+        }
+        .content .overlay-5 {
+            position: absolute;
+            bottom: -100%;
+            /* Start off-screen at the bottom */
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #5cade5;
+            /* Semi-transparent overlay */
+            color: white;
+            /* display: grid;
+            place-items: center;  */
+            text-align: center;
+            transition: bottom 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            padding: 33px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 22px;
+            /* Hidden by default */
+        }
+      
+        
+
 
         /* Hover effect */
         .content:hover .initial {
@@ -604,6 +651,18 @@
 
         .content:hover .overlay-3 {
             bottom: 0;
+            /* Slide in the overlay */
+            opacity: 1;
+            /* Make overlay visible */
+        }
+        .content:hover .overlay-4 {
+        bottom: 0;
+            /* Slide in the overlay */
+            opacity: 1;
+            /* Make overlay visible */
+        }
+        .content:hover .overlay-5 {
+        bottom: 0;
             /* Slide in the overlay */
             opacity: 1;
             /* Make overlay visible */
@@ -811,6 +870,16 @@
     background-color: #f3783b;
     height: 15px;
 }
+/* .container4,.container2 {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    section:is(:target, :hover) .container2,
+    section:is(:target, :hover) .container4 {
+      opacity: 1;
+      transform: translateY(0);
+    } */
     </style>
 </head>
 
@@ -1061,7 +1130,7 @@
                         a part of our
                         rich </p><!-- Initial content -->
                 </div>
-                <div class="overlay">
+                <div class="overlay-5">
                     <h1 class="overlay-h1">Inside</h1>
                     <h1 class="overlay-h1">The Hat</h1>
                     <h6 class="overlay-h6">LIFE AT DISNEY</h6>
@@ -1109,7 +1178,7 @@
 
                     <!-- Initial content -->
                 </div>
-                <div class="overlay-3">
+                <div class="overlay-4">
                     <h1 class="overlay-h1">Growing</h1>
                     <h1 class="overlay-h1">New Talent</h1>
                     <h6 class="overlay-h6">INTERNS & APPRENTICES</h6>
