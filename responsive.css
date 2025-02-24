@@ -57,6 +57,7 @@
     .footer-container {
         display: flex;
         flex-wrap: wrap;
+        gap:15px !important;
     }
 
     .bg-grey-content {
@@ -221,6 +222,7 @@
     .footer-container {
 
         flex-direction: column !important;
+        gap:12px !important;
     }
 
     div ul {
